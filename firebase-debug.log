@@ -1,0 +1,74 @@
+[debug] [2019-10-22T13:56:47.925Z] ----------------------------------------------------------------------
+[debug] [2019-10-22T13:56:47.927Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-10-22T13:56:47.928Z] CLI Version:   7.6.1
+[debug] [2019-10-22T13:56:47.928Z] Platform:      darwin
+[debug] [2019-10-22T13:56:47.928Z] Node Version:  v10.16.0
+[debug] [2019-10-22T13:56:47.929Z] Time:          Tue Oct 22 2019 22:56:47 GMT+0900 (GMT+09:00)
+[debug] [2019-10-22T13:56:47.930Z] ----------------------------------------------------------------------
+[debug] [2019-10-22T13:56:47.930Z] 
+[debug] [2019-10-22T13:56:47.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-22T13:56:47.945Z] > authorizing via signed-in user
+[debug] [2019-10-22T13:56:47.946Z] [iam] checking project skyhigh-65e91 for permissions ["firebase.projects.get"]
+[debug] [2019-10-22T13:56:47.948Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/skyhigh-65e91:testIamPermissions  
+
+[debug] [2019-10-22T13:56:49.085Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-22T13:56:49.089Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyhigh-65e91  
+ 
+[debug] [2019-10-22T13:56:50.175Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-22T13:56:50.179Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyhigh-65e91/webApps/-/config  
+ 
+[debug] [2019-10-22T13:56:51.404Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-22T14:01:07.731Z] ----------------------------------------------------------------------
+[debug] [2019-10-22T14:01:07.735Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-10-22T14:01:07.735Z] CLI Version:   7.6.1
+[debug] [2019-10-22T14:01:07.736Z] Platform:      darwin
+[debug] [2019-10-22T14:01:07.736Z] Node Version:  v10.16.0
+[debug] [2019-10-22T14:01:07.745Z] Time:          Tue Oct 22 2019 23:01:07 GMT+0900 (GMT+09:00)
+[debug] [2019-10-22T14:01:07.745Z] ----------------------------------------------------------------------
+[debug] [2019-10-22T14:01:07.745Z] 
+[debug] [2019-10-22T14:01:07.764Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-22T14:01:07.765Z] > authorizing via signed-in user
+[debug] [2019-10-22T14:01:07.765Z] [iam] checking project skyhigh-65e91 for permissions ["firebase.projects.get"]
+[debug] [2019-10-22T14:01:07.767Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/skyhigh-65e91:testIamPermissions  
+
+[debug] [2019-10-22T14:01:08.788Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-22T14:01:08.791Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyhigh-65e91  
+ 
+[debug] [2019-10-22T14:01:09.764Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/inoue/Desktop/skyhigh'...
+[info] 
+[debug] [2019-10-22T14:01:09.771Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyhigh-65e91/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-10-22T14:01:11.096Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/inoue/Desktop/skyhigh/functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: dist
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-10-22T14:01:11.441Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/inoue/Desktop/skyhigh/functions","node_version":"10.16.0"}
+[debug] [2019-10-22T14:01:11.441Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-22T14:01:11.448Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/inoue/Desktop/skyhigh/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-10-22T14:01:11.451Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/inoue/Desktop/skyhigh/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-10-22T14:01:11.452Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/inoue/Desktop/skyhigh/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-10-22T14:01:11.589Z] Unsupported trigger: {"eventTrigger":{"resource":"projects/skyhigh-65e91","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"},"name":"userJoined","entryPoint":"userJoined"}
+[info] ✔  functions[helloWorld]: http function initialized (http://localhost:5001/skyhigh-65e91/us-central1/helloWorld).
+[info] i  functions[projectCreated]: function ignored because the firestore emulator does not exist or is not running.
+[info] i  functions[userJoined]: function ignored because the firebaseauth.googleapis.com emulator does not exist or is not running.
+[debug] [2019-10-22T14:01:18.621Z] Accepted request GET /skyhigh-65e91/us-central1/helloWorld --> helloWorld
+[debug] [2019-10-22T14:01:19.346Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/inoue/Desktop/skyhigh/functions","node_version":"10.16.0"}
+[info] i  functions: Beginning execution of "helloWorld"
+[debug] [2019-10-22T14:01:19.348Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-22T14:01:19.357Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.1","resolution":"/Users/inoue/Desktop/skyhigh/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-10-22T14:01:19.359Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/inoue/Desktop/skyhigh/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-10-22T14:01:19.362Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/inoue/Desktop/skyhigh/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-10-22T14:01:19.490Z] [runtime-status] Trigger "helloWorld" has been found, beginning invocation! {}
+[debug] [2019-10-22T14:01:19.491Z] [runtime-status]  {"httpsTrigger":{},"name":"helloWorld","entryPoint":"helloWorld"}
+[debug] [2019-10-22T14:01:19.491Z] [runtime-status] Running helloWorld in mode HTTPS {}
+[debug] [2019-10-22T14:01:19.513Z] {"socketPath":"/var/folders/65/55s0sgr1185ckbmv9mv2gplw0000gn/T/firebase_emulator_invocation_12347.sock"}
+[debug] [2019-10-22T14:01:19.517Z] [functions] Runtime ready! Sending request! {"socketPath":"/var/folders/65/55s0sgr1185ckbmv9mv2gplw0000gn/T/firebase_emulator_invocation_12347.sock"}
+[debug] [2019-10-22T14:01:19.533Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-22T14:01:19.651Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "helloWorld" in ~1s
