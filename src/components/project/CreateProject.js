@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { createProject } from '../store/actions/projectActions'
+import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
-import authReducer from '../store/reducers/authReducer'
+import authReducer from '../../store/reducers/authReducer'
 
 class CreateProject extends Component {
   state = {
@@ -25,28 +25,18 @@ class CreateProject extends Component {
     return <Redirect to='/signin'></Redirect>
     return (
       <div className="container">
-        <form className="white">
+        <form onSubmit={this.handleSubmit} className="white">
           <h5 className="grey-text text-darken-3">
             Create New Project
           </h5>
           <div className="input-field">
-            <label htmlFor="email">
-              <input type="email" id="mail" onChange={this.handleChange}/>
+            <label htmlFor="title">
+              <input type="text" id="title" onChange={this.handleChange}/>
             </label>
           </div>
           <div className="input-field">
-            <label htmlFor="password">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
-            </label>
-          </div>
-          <div className="input-field">
-            <label htmlFor="lastName">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
-            </label>
-          </div>
-          <div className="input-field">
-            <label htmlFor="firstName">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
+            <label htmlFor="content">
+              <textarea id="content" onChange={this.handleSubmit}/>
             </label>
           </div>
           <div className="input-field">
@@ -72,4 +62,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(createProject)
+export default connect(null, mapDispatchToProps)(createProject, mapStateToProps)

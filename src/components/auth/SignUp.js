@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { signUp } from '../store/actions/authActions';
+import { signUp } from '../../store/actions/authActions';
 
-class SignedUp extends Component {
+class SignUp extends Component {
   state = {
     email: '',
-    passward: ''
+    passward: '',
+    firstName: '',
+    lastName: ''
   }
   handleChange = (e) => {
-    console.log(e)
+    this.setState({
+      [e.target.id]: e.terget.value
+    })
   }
   handleSubmit = (e) => {
-    console.log(e)
+    e.preventDefault();
+    console.log(this.state)
   }
   render() {
     return (
@@ -22,27 +27,27 @@ class SignedUp extends Component {
           </h5>
           <div className="input-field">
             <label htmlFor="email">
-              <input type="email" id="mail" onChange={this.handleChange}/>
+              <input type="email" id="email" onChange={this.handleChange}/>
             </label>
           </div>
           <div className="input-field">
             <label htmlFor="password">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
-            </label>
-          </div>
-          <div className="input-field">
-            <label htmlFor="lastName">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
+              <input type="password" id="password" onChange={this.handleChange}/>
             </label>
           </div>
           <div className="input-field">
             <label htmlFor="firstName">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
+              <input type="text" id="firstName" onChange={this.handleChange}/>
+            </label>
+          </div>
+          <div className="input-field">
+            <label htmlFor="lastName">
+              <input type="text" id="lastName" onChange={this.handleChange}/>
             </label>
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 ze-depth-0">
-              Login
+              SIGN UP
             </button>
           </div>
         </form>
@@ -60,8 +65,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    signIn: (newUser) => dispatch(signUp(newUser))
+    signup: (newUser) => dispatch(signUp(newUser))
   }
 }
 
-export default connect (mapStateToProps)(SignedUp)
+export default connect (mapStateToProps)(signUp)

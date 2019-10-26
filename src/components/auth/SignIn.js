@@ -1,37 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signIn } from '../store/actions/authActions';
-import { auth } from 'firebase';
+import { signIn } from '../../store/actions/authActions';
+import { auth } from 'react-redux-firebase';
 
-
-class SignedIn extends Component {
+class SignIn extends Component {
   state = {
     email: '',
-    passward: ''
+    passward: '',
+    firstName: '',
+    lastNane: ''
   }
   handleChange = (e) => {
-    console.log(e)
+    this.setState({
+      [e.target.id]: e.target.value
+    })
   }
   handleSubmit = (e) => {
     console.log(e)
+    e.prevetDefault();
     this.props.signIn(this.state);
   }
   render() {
     const { authError } = (state) => this.props
     return (
       <div className="container">
-        <form className="white">
+        <form onSubmit={this.handleSubmit} className="white">
           <h5 className="grey-text text-darken-3">
             Sign In
           </h5>
           <div className="input-field">
             <label htmlFor="email">
-              <input type="email" id="mail" onChange={this.handleChange}/>
+              <input type="email" id="email" onChange={this.handleChange} />
             </label>
           </div>
           <div className="input-field">
             <label htmlFor="password">
-              <input type="email" id="mail" onChange={this.handleSubmit}/>
+              <input type="password" id="password" onChange={this.handleSubmit} />
             </label>
           </div>
           <div className="input-field">
@@ -50,6 +54,7 @@ class SignedIn extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.firebase.auth,
     authError: state.auth.authError
   }
 }

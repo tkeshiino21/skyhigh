@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
   console.log(state);
   return {
     projects: state.firestore.ordered.projects,
-    auth: state.Firebase.auth,
+    auth: state.firebase.auth,
     notifications: state.firestore.ordered.notification
   }
 }
