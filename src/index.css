@@ -13,9 +13,6 @@ code {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
-  background: url(/img/mario.jpeg) no-repeat;
-
+  background-color: #cccccc;
 }

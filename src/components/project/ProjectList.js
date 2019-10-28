@@ -10,7 +10,7 @@ const ProjectList = ({projects}) => {
           <span className="card-list">
             { projects && projects.map(project =>{
               return (
-                <Link to='/project/ + {project.id}'>
+                <Link to={'/project/' + project.id}>
                   <ProjectSummary project={project} key={project.id} />
                 </Link>
               )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions';
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
   state = {
@@ -11,44 +12,47 @@ class SignUp extends Component {
   }
   handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.terget.value
+      [e.target.id]: e.target.value
     })
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
+    this.props.signUp(this.state);
   }
+
   render() {
+    const { authError, auth } = this.props
+    if (auth.uid)
+    return <Redirect to='/' />
     return (
       <div className="container">
-        <form className="white">
+        <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">
-            Sign In
+            Sign Up
           </h5>
           <div className="input-field">
-            <label htmlFor="email">
-              <input type="email" id="email" onChange={this.handleChange}/>
-            </label>
+            <label htmlFor="email">email</label>
+            <input type="email" id="email" onChange={this.handleChange}/>
           </div>
           <div className="input-field">
-            <label htmlFor="password">
+            <label htmlFor="password">password</label>
               <input type="password" id="password" onChange={this.handleChange}/>
-            </label>
           </div>
           <div className="input-field">
-            <label htmlFor="firstName">
-              <input type="text" id="firstName" onChange={this.handleChange}/>
-            </label>
+            <label htmlFor="firstName">姓</label>
+            <input type="text" id="firstName" onChange={this.handleChange}/>
           </div>
           <div className="input-field">
-            <label htmlFor="lastName">
-              <input type="text" id="lastName" onChange={this.handleChange}/>
-            </label>
+            <label htmlFor="lastName">名</label>
+            <input type="text" id="lastName" onChange={this.handleChange}/>
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 ze-depth-0">
               SIGN UP
             </button>
+            <div className="red-text center">
+            { authError ? <p>{authError}</p> : null}
+            </div>
           </div>
         </form>
       </div>
@@ -65,8 +69,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    signup: (newUser) => dispatch(signUp(newUser))
+    signUp: (newUser) => dispatch(signUp(newUser))
   }
 }
 
-export default connect (mapStateToProps)(signUp)
+export default connect (mapStateToProps, mapDispatchToProps)(SignUp)

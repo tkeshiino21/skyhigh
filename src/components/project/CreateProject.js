@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { createProject } from '../../store/actions/projectActions'
 import { Redirect } from 'react-router-dom'
-import authReducer from '../../store/reducers/authReducer'
 
 class CreateProject extends Component {
   state = {
-    title:  '',
+    title: '',
     content: ''
   }
   handleChange = (e) => {
@@ -21,8 +20,8 @@ class CreateProject extends Component {
   }
   render() {
     const { auth }  = this.props;
-    if (!auth.uid)
-    return <Redirect to='/signin'></Redirect>
+    //if (!auth.uid)
+    //return <Redirect to='/signin' />
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
@@ -52,7 +51,7 @@ class CreateProject extends Component {
 
 const mapStateToProps = (state)  => {
   return {
-    auth: state.firebase.state
+    auth: state.firebase.auth
   }
 }
 
@@ -62,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(createProject, mapStateToProps)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProject)

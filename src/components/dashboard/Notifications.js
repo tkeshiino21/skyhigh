@@ -9,7 +9,7 @@ const Notifications = (props) => {
           <span cLassname="card-title">
             Notification
           </span>
-          <ul className="notifications">
+          <ul className="online-users">
             { notifications &&  notifications.map(item =>{
                 return (
                   <li key={item.id}>
